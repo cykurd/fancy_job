@@ -9,12 +9,12 @@ os.chdir(script_dir)
 
 
 def read_number():
-    with open("number.txt", "r") as f:
+    with open("counter.txt", "r") as f:
         return int(f.read().strip())
 
 
 def write_number(num):
-    with open("number.txt", "w") as f:
+    with open("counter.txt", "w") as f:
         f.write(str(num))
 
 
@@ -55,7 +55,7 @@ def generate_random_commit_message():
 
 def git_commit():
     # Stage the changes
-    subprocess.run(["git", "add", "number.txt"])
+    subprocess.run(["git", "add", "counter.txt"])
     # Create commit with current date
     if "FANCY_JOB_USE_LLM" in os.environ:
         commit_message = generate_random_commit_message()
