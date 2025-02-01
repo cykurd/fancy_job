@@ -1,1 +1,4 @@
 venv/
+.DS_Store
+cron_job.log
+update_number.py.bak
